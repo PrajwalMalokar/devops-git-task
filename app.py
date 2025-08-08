@@ -10,5 +10,15 @@ def login():
 def home():
     return render_template('index.html')
 
+
+@app.route('/profile')
+def profile():
+    user = {
+        'name': 'Walter White',
+        'email': 'heisenberg@example.com',
+        'joined_date': '2025-08-08'
+    }
+    return render_template('profile.html', user=user)
+
 if __name__=='__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
